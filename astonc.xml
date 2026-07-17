@@ -1,5 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  ======================================================
+  Configured & Maintained by: envy / envy.slxughter
+  Target: OnePlus Ace 3 (astonc)
+  ======================================================
+-->
 <manifest>
-  <!-- Tell the server to pull your phone files -->
-  <project name="LineageOS/android_device_oneplus_astonc" path="device/oneplus/astonc" remote="github" revision="lineage-22.1" />
+  <!-- Remote host definitions (Fully declared URLs) -->
+  <remote name="github-lineage" fetch="https://github.com" />
+  <remote name="github-muppets" fetch="https://github.com" />
+
+  <!-- Device Tree (OnePlus Ace 3 / 12R) -->
+  <project name="android_device_oneplus_astonc"
+           path="device/oneplus/astonc"
+           remote="github-lineage"
+           revision="lineage-23.2" />
+
+  <!-- Common Device Tree (Shared Snapdragon 8 Gen 2 files) -->
+  <project name="android_device_oneplus_sm8550-common"
+           path="device/oneplus/sm8550-common"
+           remote="github-lineage"
+           revision="lineage-23.2" />
+
+  <!-- Vendor Blobs (Proprietary files required for cameras/sensors to boot) -->
+  <project name="proprietary_vendor_oneplus_astonc"
+           path="vendor/oneplus/astonc"
+           remote="github-muppets"
+           revision="lineage-23.2" />
+
+  <project name="proprietary_vendor_oneplus_sm8550-common"
+           path="vendor/oneplus/sm8550-common"
+           remote="github-muppets"
+           revision="lineage-23.2" />
+
+  <!-- Kernel Tree (The hardware engine) -->
+  <project name="android_kernel_oneplus_sm8550"
+           path="kernel/oneplus/sm8550"
+           remote="github-lineage"
+           revision="lineage-23.2" />
+
+  <!-- Hardware Oplus Core dependencies -->
+  <project name="android_hardware_oplus"
+           path="hardware/oplus"
+           remote="github-lineage"
+           revision="lineage-23.2" />
 </manifest>
+
