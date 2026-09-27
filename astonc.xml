@@ -1,9 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
+    <!-- Explicit Base Remote URLs -->
+    <remote name="alpha-github" fetch="https://github.com/alphadroid-project" />
+    <remote name="alpha-devices" fetch="https://github.com/AlphaDroid-devices" />
+    <remote name="alpha-gitlab" fetch="https://gitlab.com/alphadroid-project" />
+    <remote name="crdroid" fetch="https://github.com" />
 
-  <project path="hardware/pixelworks/interfaces" name="yaap/hardware_pixelworks_interfaces" remote="github" revision="sixteen" />
-  <project path="vendor/oneplus/astonc" name="TheMuppets/proprietary_vendor_oneplus_astonc" remote="github" revision="lineage-23.2" />
-  <project path="vendor/oneplus/sm8550-common" name="TheMuppets/proprietary_vendor_oneplus_sm8550-common" remote="github" revision="lineage-23.2" />
+    <!-- Device Trees (GitHub: AlphaDroid-devices) -->
+    <project path="device/oneplus/astonc" name="device_oneplus_astonc" remote="alpha-devices" revision="alpha-16.2" />
+    <project path="device/oneplus/sm8550-common" name="device_oneplus_sm8550-common" remote="alpha-devices" revision="alpha-16.2" />
 
+    <!-- Hardware HALs (GitHub: AlphaDroid-Project) -->
+    <project path="hardware/oplus" name="hardware_oplus" remote="alpha-github" revision="alpha-16.2-astonc" />
+
+    <!-- Display HAL (Pixelworks Iris 7P Chip) -->
+    <remove-project name="hardware_qcom_display" path="hardware/qcom-caf/sm8550/display" />
+    <project path="hardware/qcom-caf/sm8550/display" name="hardware_qcom_display" remote="alpha-github" revision="alpha-16.2-caf-sm8550-astonc" groups="qcom" />
+
+    <!-- Kernel & KSU (GitHub: AlphaDroid-devices) -->
+    <project path="kernel/oneplus/sm8550" name="kernel_oneplus_sm8550" remote="alpha-devices" revision="alpha-16.2-ksu" />
+    <project path="kernel/oneplus/sm8550-modules" name="kernel_oneplus_sm8550-modules" remote="alpha-devices" revision="alpha-16.2" />
+    <project path="kernel/oneplus/sm8550-devicetrees" name="kernel_oneplus_sm8550-devicetrees" remote="alpha-devices" revision="alpha-16.2" />
+
+    <!-- Vendor Blobs & Features (GitLab: alphadroid-project) -->
+    <project path="vendor/oneplus/astonc" name="vendor_oneplus_astonc" remote="alpha-gitlab" revision="alpha-16.2-aston" />
+    <project path="vendor/oneplus/fusion" name="vendor_oneplus_fusion" remote="alpha-gitlab" revision="alpha-16.2-aston" />
+    <project path="vendor/oneplus/sm8550-common" name="vendor_oneplus_sm8550-common" remote="alpha-gitlab" revision="alpha-16.2-aston" />
+    <project path="vendor/oneplus/dolby" name="vendor_oneplus_dolby" remote="alpha-gitlab" revision="alpha-16.2" />
+    <project path="vendor/oneplus/ir" name="vendor_oneplus_ir" remote="alpha-gitlab" revision="alpha-16.2" />
+
+    <!-- Audio Apps -->
+    <project path="packages/apps/LunarisDolby" name="crdroidandroid/android_packages_apps_LunarisDolby" remote="crdroid" revision="16.0" />
 </manifest>
-
